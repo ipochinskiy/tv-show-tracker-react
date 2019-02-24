@@ -42,7 +42,6 @@ describe('Component: App', () => {
     });
 
     describe('with "showList" containing 0 items', () => {
-
         beforeEach(() => {
             props = {
                 ...DEFAULT_PROPS,
@@ -71,10 +70,12 @@ describe('Component: App', () => {
     });
 
     describe('with "showList" containing 1 item', () => {
-        let props, showList;
+        let showList;
 
         beforeEach(() => {
-            showList = [ 'The Big Bang Theory' ];
+            showList = [
+                { id: 'The Big Bang Theory' },
+            ];
             props = {
                 ...DEFAULT_PROPS,
                 showList,
