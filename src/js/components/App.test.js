@@ -36,7 +36,7 @@ describe('Component: App', () => {
     it('should signalize the app is loaded after component did mount', () => {
         const component = shallow(<App {...props} />);
 
-        expect(props.appLoaded).toHaveBeenCalledWith();
+        expect(props.appLoaded).toHaveBeenCalled();
     });
 
     describe('with "showList" containing 0 items', () => {
