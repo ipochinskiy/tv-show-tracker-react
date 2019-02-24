@@ -8,12 +8,13 @@ describe('Component: NavBar', () => {
     it('should render the logo', () => {
         const component = mount(<MemoryRouter><NavBar /></MemoryRouter>);
 
-        expect(component).toHaveText("ShowTrackr");
+        expect(component).toIncludeText("ShowTrackr");
     });
 
-    it('should render a link to the home page', () => {
+    it('should render navigation links', () => {
         const component = mount(<MemoryRouter><NavBar /></MemoryRouter>);
+        const linkList = component.find(Link).map(node => node.props().to);
 
-        expect(component.find('a').first().props().href).toBe('/');
+        expect(linkList).toEqual([ '/', '/search' ]);
     });
 });

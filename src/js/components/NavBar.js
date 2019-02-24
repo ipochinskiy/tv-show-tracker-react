@@ -6,11 +6,12 @@ const NavBar = () => (
     <div className="NavBar" role="navigation">
         <div className="NavBar-header">
             <Link to="/">
-                <div className="NavBar-brand" >
-                    <span className="glyphicon glyphicon-film"></span>
-                    &nbsp;Show<strong>Trackr</strong>
-                </div>
+                <span className="glyphicon glyphicon-film"></span>
+                &nbsp;Show<strong>Trackr</strong>
             </Link>
+        </div>
+        <div className="NavBar-content">
+            <div className="NavBar-item"><Link to="/search">Search</Link></div>
         </div>
     </div>
 );

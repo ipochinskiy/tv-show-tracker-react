@@ -1,10 +1,11 @@
+$navbar-height: 50px;
+
 .NavBar {
     width: 100%;
-    min-height: 50px;
+    min-height: $navbar-height;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     background-color: #f6f7f6;
     border: 1px solid #e7e7e7;
@@ -15,19 +16,31 @@
 
     &-header {
         width: 160px;
-    }
-
-    &-brand {
-        height: 50px;
+        height: $navbar-height;
         padding: 15px 15px;
 
         font-size: 18px;
         line-height: 20px;
-        color: #111;
         background-color: #ffe939;
     }
 
+    &-content {
+        width: calc(100% - 160px);
+        height: $navbar-height;
+        display: flex;
+        align-items: center;
+    }
+
     &-item {
-        list-style: none;
+        min-width: 60px;
+        padding: 0 24px;
+        color: #111;
+        font-size: 20px;
+        line-height: $navbar-height;
+        vertical-align: middle;
+
+        &:hover {
+            background-color: #e3e3e3;
+        }
     }
 }
