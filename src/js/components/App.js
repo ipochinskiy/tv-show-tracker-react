@@ -22,9 +22,9 @@ class App extends React.Component  {
     constructor(props) {
         super(props);
         this.state = { selectedLetter: null, selectedGenre: null };
+
         this.selectGenre = this.selectGenre.bind(this);
         this.selectLetter = this.selectLetter.bind(this);
-        this.onChangeSearchQuery = this.onChangeSearchQuery.bind(this);
         this.onSubmitSearchQuery = this.onSubmitSearchQuery.bind(this);
     }
 
@@ -40,12 +40,7 @@ class App extends React.Component  {
         this.setState({ selectedGenre: genre });
     }
 
-    onChangeSearchQuery(searchQuery) {
-        this.setState({ searchQuery });
-    }
-
-    onSubmitSearchQuery() {
-        const { searchQuery } = this.state;
+    onSubmitSearchQuery(searchQuery) {
         if (!searchQuery) {
             return;
         }
@@ -64,7 +59,7 @@ class App extends React.Component  {
                 <div className="App-content">
                     {showList.length > 0
                         ? <ShowList showList={showList} />
-                        : <SearchForm onChange={this.onChangeSearchQuery} onSubmit={this.onSubmitSearchQuery}/>
+                        : <SearchForm onSubmit={this.onSubmitSearchQuery}/>
                     }
                 </div>
             </div>
