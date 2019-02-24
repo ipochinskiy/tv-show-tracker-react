@@ -16,3 +16,8 @@ code {
 body {
     background-color: #e4e7ec;
 }
+
+a, a:hover, a:visited {
+    color: #111;
+    text-decoration: none;
+}
