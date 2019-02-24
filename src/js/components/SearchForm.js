@@ -1,33 +1,57 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { searchShow } from '../actions/index';
 import './SearchForm.scss';
 
-class SearchForm extends React.Component{
+export class SearchForm extends React.Component{
     constructor(props) {
         super(props);
-        this.state = { searchQuery: null};
+        this.state = { searchQuery: null };
+
         this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onChange(searchQuery) {
-        this.setState({ searchQuery });
+    onChange(e) {
+        if (!e.target || !e.target.value) {
+            return;
+        }
+        this.setState({ searchQuery: e.target.value });
+    }
+
+    onSubmit() {
+        const { searchQuery } = this.state;
+        const { token, history } = this.props;
+        if (!searchQuery || !token || !history) {
+            return;
+        }
+
+        this.props.searchShow(searchQuery, token);
+        history.push('/shows');
     }
 
     render() {
-        const { onSubmit } = this.props;
-        const { searchQuery } = this.state;
-
         return (
             <div className="SearchForm">
                 <input
                     className="SearchForm-input"
                     type="text"
                     placeholder="Type in a show's name"
-                    onChange={(e) => this.onChange(e.target.value)}
+                    onChange={this.onChange}
                 />
-                <button className="SearchForm-button" onClick={() => onSubmit(searchQuery)}>Search</button>
+                <button className="SearchForm-button" onClick={this.onSubmit}>Search</button>
             </div>
         );
     }
 }
 
-export default SearchForm;
+const mapStateToProps = state => {
+    return {
+        token: state.token,
+    };
+};
+
+export default withRouter(connect(mapStateToProps, {
+    searchShow,
+})(SearchForm));
