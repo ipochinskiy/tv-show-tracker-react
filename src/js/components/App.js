@@ -17,8 +17,6 @@ export class App extends React.Component  {
     }
 
     render() {
-        const { showList = [] } = this.props;
-
         return (
             <Router>
                 <div className="App">
@@ -27,11 +25,8 @@ export class App extends React.Component  {
                         <Switch>
                             <Route exact path="/" component={SearchForm} />
                             <Route path="/search" component={SearchForm} />
+                            <Route path="/shows" component={ShowList} />
                         </Switch>
-                        {showList.length > 0
-                            ? <ShowList showList={showList} />
-                            : <SearchForm onSubmit={this.onSubmitSearchQuery} />
-                        }
                     </div>
                 </div>
             </Router>
@@ -39,12 +34,6 @@ export class App extends React.Component  {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        showList: state.showList,
-    };
-};
-
-export default connect(mapStateToProps, {
+export default connect(undefined, {
     appLoaded,
 })(App);
