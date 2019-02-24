@@ -18,7 +18,7 @@ const genreList = [
     'Romance', 'Sci-Fi', 'Sport', 'Suspense', 'Talk Show', 'Thriller', 'Travel',
 ];
 
-class App extends React.Component  {
+export class App extends React.Component  {
     constructor(props) {
         super(props);
         this.state = { selectedLetter: null, selectedGenre: null };
