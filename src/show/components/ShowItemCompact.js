@@ -7,7 +7,7 @@ const MAX_DESCRIPTION_LENGTH = 140;
 const ShowItemCompact = ({ showItem }) => (
     <div className="ShowItemCompact">
         <div className="ShowItemCompact-banner">
-            {showItem.banner && <img src={assembleBannerUrl(showItem.banner)} />}
+            {showItem.banner && <img src={assembleBannerUrl(showItem.banner)} alt={showItem.seriesName}/>}
         </div>
         <div className="ShowItemCompact-content">
             <div className="ShowItemCompact-title">{showItem.seriesName}</div>

@@ -16,7 +16,10 @@ describe('Component: ShowItemCompact', () => {
         it('should render the banner', () => {
             const component = shallow(<ShowItemCompact {...props} />);
 
-            expect(component.find('img').first().props().src).toBe('http://thetvdb.com/banners/path/to/banner');
+            expect(component.find('img').first().props()).toMatchObject({
+                src: 'http://thetvdb.com/banners/path/to/banner',
+                alt: 'The Big Bang Theory',
+            });
         });
 
         it('should render the show name', () => {
