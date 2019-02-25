@@ -3,13 +3,16 @@
     padding: 20px 5%;
     background-color: #f6f7f6;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 
     &-input {
+        width: 100%;
         outline: none;
         border: none;
         background: transparent;
-        font-size: 32px;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 16px;
     }
 
     &-button {
@@ -20,5 +23,20 @@
         font-size: 32px;
         border-radius: 16px;
         color: #fff;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .SearchForm {
+        flex-direction: row;
+        justify-content: center;
+
+        &-input {
+            max-width: 700px;
+            font-size: 32px;
+            line-height: 40px;
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
     }
 }
