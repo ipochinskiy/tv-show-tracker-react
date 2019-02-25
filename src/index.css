@@ -17,7 +17,8 @@ body {
     background-color: #e4e7ec;
 }
 
-a, a:hover, a:visited {
+a, a:hover, a:visited, a:focus, a:active {
     color: #111;
+    outline: none;
     text-decoration: none;
 }
