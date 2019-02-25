@@ -5,8 +5,8 @@ import { createStore } from 'redux';
 import { shallow } from 'enzyme';
 import { App } from './App';
 import NavBar from './NavBar';
-import SearchForm from './SearchForm';
-import ShowList from './ShowList';
+import SearchForm from './show/components/SearchForm';
+import ShowList from './show/components/ShowList';
 
 describe('Component: App', () => {
     let props;

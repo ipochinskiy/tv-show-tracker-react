@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from "react-redux";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { appLoaded } from '../actions/show-actions';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import NavBar from "./NavBar";
-import SearchForm from "./SearchForm";
-import ShowList from "./ShowList";
+import NavBar from './NavBar';
+import { appLoaded } from './show/actions/show-actions';
+import SearchForm from './show/components/SearchForm';
+import ShowList from './show/components/ShowList';
 
 export class App extends React.Component  {
     componentDidMount() {
