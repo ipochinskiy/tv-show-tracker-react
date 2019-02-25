@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './NavBar.scss';
 
 const NavBar = () => (
@@ -11,7 +11,7 @@ const NavBar = () => (
             </Link>
         </div>
         <div className="NavBar-content">
-            <div className="NavBar-item"><Link to="/search">Search</Link></div>
+            <NavLink to="/search" className="NavBar-item" activeClassName="NavBar-item-active">Search</NavLink>
         </div>
     </div>
 );

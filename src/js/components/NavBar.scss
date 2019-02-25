@@ -32,14 +32,18 @@ $navbar-height: 50px;
     }
 
     &-item {
+        display: block;
         min-width: 60px;
         padding: 0 24px;
         color: #111;
         font-size: 20px;
         line-height: $navbar-height;
-        vertical-align: middle;
 
         &:hover {
+            background-color: #e3e3e3;
+        }
+
+        &-active {
             background-color: #e3e3e3;
         }
     }
