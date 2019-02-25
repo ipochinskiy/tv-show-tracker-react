@@ -1,5 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { API_ERRORED, SEARCH_SHOW, SHOW_LIST_FOUND } from '../constants/action-types';
+import { apiErrored, showListFound } from '../actions';
+import { SEARCH_SHOW } from '../constants/action-types';
 
 export default function* watcherSaga() {
     yield takeEvery(SEARCH_SHOW, workerSaga);
@@ -8,11 +9,11 @@ export default function* watcherSaga() {
 function* workerSaga(action) {
     try {
         const response = yield call(searchShow, action.payload);
-        yield put({ type: SHOW_LIST_FOUND, payload: response.data });
+        yield put(showListFound(response.data));
         return;
     } catch (e) {
         console.warn(e);
-        yield put({ type: API_ERRORED, payload: e });
+        yield put(apiErrored(e));
     }
 }
 

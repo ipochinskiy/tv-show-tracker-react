@@ -1,5 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { API_ERRORED, APP_LOADED, LOGGED_IN } from '../constants/action-types';
+import { apiErrored, loggedIn } from '../actions';
+import { APP_LOADED } from '../constants/action-types';
 
 const API_KEY = '9EF1D1E7D28FDA0B';
 
@@ -10,9 +11,9 @@ export default function* watcherSaga() {
 function* workerSaga() {
     try {
         const payload = yield call(login);
-        yield put({ type: LOGGED_IN, payload });
+        yield put(loggedIn(payload));
     } catch (e) {
-        yield put({ type: API_ERRORED, payload: e });
+        yield put(apiErrored(e));
     }
 }
 
