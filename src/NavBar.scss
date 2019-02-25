@@ -27,7 +27,7 @@ $navbar-header-width: 150px;
     }
 
     &-content {
-        width: calc(100% - $navbar-header-width);
+        width: calc(100% - #{$navbar-header-width});
         height: $navbar-height;
         display: flex;
         align-items: center;
