@@ -20,7 +20,7 @@ describe('Component: ShowList', () => {
     it('should render empty state', () => {
         const component = shallow(<ShowList {...props} />);
 
-        expect(component).toHaveText('Nothing is there');
+        expect(component).toHaveText('Nothing found so far, try to search for a show you like');
     });
 
     describe('and with show list set', () => {
@@ -39,11 +39,26 @@ describe('Component: ShowList', () => {
             expect(component.find(ShowItemCompact).length).toBe(2);
         });
     });
+
+    describe('and with show list loading', () => {
+        beforeEach(() => {
+            props = createComponentProps({
+                isShowListLoading: true,
+            });
+        });
+
+        it('should render spinner', () => {
+            const component = shallow(<ShowList {...props} />);
+
+            expect(component.find('.ShowList-spinner')).toBeTruthy();
+        });
+    });
 });
 
 function createComponentProps(options) {
     return {
         showList: [],
+        isShowListLoading: false,
         ...options,
     };
 }
