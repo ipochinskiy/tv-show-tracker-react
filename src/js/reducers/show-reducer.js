@@ -1,19 +1,26 @@
-import { LOGGED_IN, SHOW_LIST_FOUND } from "../constants/action-types";
+import { LOGGED_IN, SEARCH_SHOW, SHOW_LIST_FOUND } from "../constants/action-types";
 
 const initialState = {
     token: null,
     showList: [],
+    isShowListLoading: false,
 };
 
-function rootReducer(state = initialState, action) {
+function showReducer(state = initialState, action) {
     switch (action.type) {
+        case SEARCH_SHOW:
+            return {
+                ...state,
+                showList: [],
+                isShowListLoading: true,
+            }
         case SHOW_LIST_FOUND:
             return {
                 ...state,
                 showList: [
-                    ...state.showList,
                     ...action.payload,
                 ],
+                isShowListLoading: false,
             };
         case LOGGED_IN:
             return {
@@ -25,4 +32,4 @@ function rootReducer(state = initialState, action) {
     }
 }
 
-export default rootReducer;
+export default showReducer;
