@@ -8,7 +8,7 @@ describe('Component: NavBar', () => {
     it('should render the logo', () => {
         const component = mount(<MemoryRouter><NavBar /></MemoryRouter>);
 
-        expect(component).toIncludeText("ShowTrackr");
+        expect(component).toIncludeText('ShowTrackr');
     });
 
     it('should render navigation links', () => {
