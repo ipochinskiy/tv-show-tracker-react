@@ -15,6 +15,6 @@ describe('Component: NavBar', () => {
         const component = mount(<MemoryRouter><NavBar /></MemoryRouter>);
         const linkList = component.find(Link).map(node => node.props().to);
 
-        expect(linkList).toEqual([ '/', '/search' ]);
+        expect(linkList).toEqual([ '/', '/search', '/shows' ]);
     });
 });

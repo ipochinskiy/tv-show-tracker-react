@@ -12,6 +12,7 @@ const NavBar = () => (
         </div>
         <div className="NavBar-content">
             <NavLink to="/search" className="NavBar-item" activeClassName="NavBar-item-active">Search</NavLink>
+            <NavLink to="/shows" className="NavBar-item" activeClassName="NavBar-item-active">Shows</NavLink>
         </div>
     </div>
 );
