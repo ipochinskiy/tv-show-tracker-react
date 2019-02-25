@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { searchShow } from '../actions/index';
+import { searchShow } from '../actions/show-actions';
 import './SearchForm.scss';
 
 export class SearchForm extends React.Component{

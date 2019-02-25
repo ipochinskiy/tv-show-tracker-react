@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { appLoaded } from '../actions/index';
+import { appLoaded } from '../actions/show-actions';
 import './App.scss';
 import NavBar from "./NavBar";
 import SearchForm from "./SearchForm";

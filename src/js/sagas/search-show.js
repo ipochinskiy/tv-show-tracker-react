@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { apiErrored, showListFound } from '../actions';
+import { apiErrored, showListFound } from '../actions/show-actions';
 import { SEARCH_SHOW } from '../constants/action-types';
 
 export default function* watcherSaga() {

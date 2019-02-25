@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { apiErrored, loggedIn } from '../actions';
+import { apiErrored, loggedIn } from '../actions/show-actions';
 import { APP_LOADED } from '../constants/action-types';
 
 const API_KEY = '9EF1D1E7D28FDA0B';

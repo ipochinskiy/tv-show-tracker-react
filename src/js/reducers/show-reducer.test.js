@@ -1,5 +1,5 @@
 import reducer from './show-reducer';
-import { searchShow, showListFound, loggedIn } from '../actions';
+import { searchShow, showListFound, loggedIn } from '../actions/show-actions';
 
 describe('Reducer: Show', () => {
     describe('for SEARCH_SHOW', () => {
