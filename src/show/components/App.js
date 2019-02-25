@@ -8,10 +8,6 @@ import SearchForm from "./SearchForm";
 import ShowList from "./ShowList";
 
 export class App extends React.Component  {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.appLoaded();
     }

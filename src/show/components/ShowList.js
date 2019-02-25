@@ -4,10 +4,6 @@ import ShowItemCompact from './ShowItemCompact';
 import './ShowList.scss';
 
 export class ShowList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { showList, isShowListLoading } = this.props;
 
