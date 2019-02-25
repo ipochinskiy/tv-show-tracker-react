@@ -26,6 +26,7 @@ export class App extends React.Component  {
                             <Route exact path="/" component={SearchForm} />
                             <Route path="/search" component={SearchForm} />
                             <Route path="/shows" component={ShowList} />
+                            {/* <Route path="/about" component={About} /> */}
                         </Switch>
                     </div>
                 </div>
